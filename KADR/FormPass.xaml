@@ -1,0 +1,103 @@
+﻿<Window x:Class="KADR.FormPass"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KADR"
+        mc:Ignorable="d"
+        Title="FormPass" Height="250" Width="400"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent">
+    
+    <Grid>
+        <Border Background="#272727" CornerRadius="10" Padding="10" Margin="20,20,20,20">
+            <Border.Effect>
+                <DropShadowEffect Color="DodgerBlue" BlurRadius="30" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <Grid Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Background="#373737"
+                        Grid.Row="0"
+                        Height="40"
+                        VerticalAlignment="Top"
+                        Margin="-10, -10, -10, -10"
+                        CornerRadius="10, 10, 0, 0"
+                        MouseLeftButtonDown="Border_MouseLeftButtonDown"
+                        >
+                    <TextBlock Text="Авторизация"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           FontSize="15"
+                           Margin="15, 0, 0, 0"/>
+                </Border>
+
+                <StackPanel Grid.Row="1" Margin="10, 5, 0, 0">
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,18,0,0" Height="30">
+                        <TextBlock
+                            Margin="20, 0, 0, 0"                       
+                            FontSize="18"
+                            Grid.Row="1"
+                            Text="Логин"
+                            HorizontalAlignment="Center"
+                            Foreground="White"/>
+                        <TextBox
+                            FontSize="15"
+                            Background="#202020"
+                            Margin="17.7, 0, 0, 0"
+                            Width="200"
+                            HorizontalAlignment="Center">
+                            <TextBox.Effect>
+                                <DropShadowEffect></DropShadowEffect>
+                            </TextBox.Effect>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,18,0,0" Height="30">
+                        <TextBlock
+                            Margin="18,0,0,0"                       
+                            FontSize="18"
+                            Grid.Row="1"
+                            Text="Пароль"
+                            HorizontalAlignment="Center"
+                            Foreground="White"/>
+                        <PasswordBox
+                            FontSize="15"
+                            Background="#202020"
+                            Margin="8,0,0,0"
+                            Width="200"
+                            HorizontalAlignment="Center">
+                            <PasswordBox.Effect>
+                                <DropShadowEffect></DropShadowEffect>
+                            </PasswordBox.Effect>
+                        </PasswordBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,18,0,0" Height="30">
+                        <Button
+                            Background="#202020"
+                            Margin="18,0,0,0"                       
+                            FontSize="12"
+                            Grid.Row="1"
+                            Content="ОК"
+                            Width="90"
+                            HorizontalAlignment="Center"
+                            Foreground="White"/>
+                        <Button
+                            Background="#202020"
+                            Margin="90,0,0,0"
+                            FontSize="12"
+                            Content="ВЫХОД"
+                            Width="90"
+                            HorizontalAlignment="Center" Click="Button_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+    </Grid>
+</Window>
