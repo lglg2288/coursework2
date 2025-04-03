@@ -14,7 +14,7 @@
     <Grid>
         <Border Background="#272727" CornerRadius="10" Padding="10" Margin="20,20,20,20">
             <Border.Effect>
-                <DropShadowEffect Color="DodgerBlue" BlurRadius="30" ShadowDepth="0"/>
+                <DropShadowEffect Color="#00BFFF" BlurRadius="20" ShadowDepth="0"/>
             </Border.Effect>
 
             <Grid Margin="0,0,0,0">
@@ -23,7 +23,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Border Background="#373737"
+                <Border Background="#151515"
                         Grid.Row="0"
                         Height="40"
                         VerticalAlignment="Top"
@@ -32,10 +32,10 @@
                         MouseLeftButtonDown="Border_MouseLeftButtonDown"
                         >
                     <TextBlock Text="Авторизация"
-                           Foreground="White"
+                           Foreground="#00BFFF"
                            VerticalAlignment="Center"
-                           FontSize="15"
-                           Margin="15, 0, 0, 0"/>
+                           FontSize="20"
+                           Margin="18, 0, 0, -2"/>
                 </Border>
 
                 <StackPanel Grid.Row="1" Margin="10, 5, 0, 0">
