@@ -34,5 +34,31 @@ namespace KADR
         {
             this.Close();
         }
+
+        private void btnExpand_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+                InternalGrid.Margin = new Thickness(0);
+                WindowBorder.CornerRadius = new CornerRadius(10);
+                TitleBorder.CornerRadius = new CornerRadius(10,10,0,0);
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+                InternalGrid.Margin = new Thickness(-20);
+                WindowBorder.CornerRadius = new CornerRadius(0);
+                TitleBorder.CornerRadius = new CornerRadius(0);
+            }
+            Keyboard.ClearFocus();
+        }
+
+        private void btnMinimized_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+            Keyboard.ClearFocus();
+            InternalGrid.Focus();
+        }
     }
 }

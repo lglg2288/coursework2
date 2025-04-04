@@ -34,11 +34,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
@@ -61,7 +65,8 @@
               "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\FormPass.xaml",
               "RelativeToolTip": "FormPass.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-03T17:05:49.909Z"
+              "WhenOpened": "2025-04-03T17:05:49.909Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -105,11 +110,12 @@
               "Title": "MainForm.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs",
               "RelativeDocumentMoniker": "MainForm.xaml.cs",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs",
-              "RelativeToolTip": "MainForm.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAZAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs*",
+              "RelativeToolTip": "MainForm.xaml.cs*",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwD0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T17:01:54.189Z"
+              "WhenOpened": "2025-04-03T17:01:54.189Z",
+              "EditorCaption": ""
             }
           ]
         }
