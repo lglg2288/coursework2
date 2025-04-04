@@ -86,7 +86,7 @@
                             Content="ОК"
                             Width="90"
                             HorizontalAlignment="Center"
-                            Foreground="White"/>
+                            Foreground="White" Click="Button_Click_1"/>
                         <Button
                             Background="#202020"
                             Margin="90,0,0,0"

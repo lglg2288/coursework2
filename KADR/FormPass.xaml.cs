@@ -32,5 +32,11 @@ namespace KADR
         {
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new MainForm().Show();
+            this.Close();
+        }
     }
 }
