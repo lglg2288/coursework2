@@ -65,8 +65,7 @@
               "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\FormPass.xaml",
               "RelativeToolTip": "FormPass.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-03T17:05:49.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T17:05:49.909Z"
             },
             {
               "$type": "Document",
@@ -98,8 +97,8 @@
               "Title": "MainForm.xaml",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml",
               "RelativeDocumentMoniker": "MainForm.xaml",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml*",
-              "RelativeToolTip": "MainForm.xaml*",
+              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml",
+              "RelativeToolTip": "MainForm.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-03T17:01:54.604Z",
               "EditorCaption": ""
@@ -110,9 +109,9 @@
               "Title": "MainForm.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs",
               "RelativeDocumentMoniker": "MainForm.xaml.cs",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs*",
-              "RelativeToolTip": "MainForm.xaml.cs*",
-              "ViewState": "AgIAACgAAAAAAAAAAAAkwD0AAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs",
+              "RelativeToolTip": "MainForm.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAD0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T17:01:54.189Z",
               "EditorCaption": ""
