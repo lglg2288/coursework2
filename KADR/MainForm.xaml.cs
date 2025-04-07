@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Documents.Serialization;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -23,6 +27,9 @@ namespace KADR
         public MainForm()
         {
             InitializeComponent();
+
+            MenuList.Items.Clear();
+            MenuList.ItemsSource = MyLeftMenus.myMenus[(int)MyLeftMenus.MenuType.Root];//привязка коллекции
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -40,14 +47,14 @@ namespace KADR
             if (this.WindowState == WindowState.Maximized)
             {
                 this.WindowState = WindowState.Normal;
-                InternalGrid.Margin = new Thickness(0);
+                WindowBorder.Margin = new Thickness(20);
                 WindowBorder.CornerRadius = new CornerRadius(10);
-                TitleBorder.CornerRadius = new CornerRadius(10,10,0,0);
+                TitleBorder.CornerRadius = new CornerRadius(10, 10, 0, 0);
             }
             else
             {
                 this.WindowState = WindowState.Maximized;
-                InternalGrid.Margin = new Thickness(-20);
+                WindowBorder.Margin = new Thickness(0);
                 WindowBorder.CornerRadius = new CornerRadius(0);
                 TitleBorder.CornerRadius = new CornerRadius(0);
             }
@@ -59,6 +66,97 @@ namespace KADR
             this.WindowState = WindowState.Minimized;
             Keyboard.ClearFocus();
             InternalGrid.Focus();
+        }
+
+        private void Border_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Border border = (Border)sender;
+
+            border.Clip = new RectangleGeometry
+            {
+                Rect = new Rect(0, 0, border.ActualWidth, border.ActualHeight),
+                RadiusX = border.CornerRadius.TopLeft,
+                RadiusY = border.CornerRadius.TopLeft
+            };
+        }
+        private void MenuList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            if (isAnimating)
+                return;
+
+            DoubleAnimation animeHide = new DoubleAnimation()
+            {
+                From = 200,
+                To = 0,
+                Duration = TimeSpan.FromMilliseconds(300),
+                FillBehavior = FillBehavior.Stop
+            };
+            DoubleAnimation animeShow = new DoubleAnimation()
+            {
+                From = 0,
+                To = 200,
+                Duration = TimeSpan.FromMilliseconds(300),
+                FillBehavior = FillBehavior.Stop
+            };
+
+            MainDataGridHide(() =>
+            {
+
+                switch (MyLeftMenus.currentMenuType)
+                {
+                    case MyLeftMenus.MenuType.Root:
+                        switch (MenuList.SelectedIndex)
+                        {
+                            case int menuElem when menuElem == MyLeftMenus.Element["📁 Справочники"]:// Справочники
+                                animeHide.Completed += (s, eIn) =>
+                                {
+                                    MenuList.ItemsSource = null;
+                                    MenuList.ItemsSource = MyLeftMenus.myMenus[(int)MyLeftMenus.MenuType.Tables];
+                                    MyLeftMenus.currentMenuType = MyLeftMenus.MenuType.Tables;
+
+                                    MenuList.BeginAnimation(WidthProperty, animeShow);
+                                };
+                                MenuList.BeginAnimation(WidthProperty, animeHide);
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["📊 Отчеты"]: // Отчеты
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["⚙️ Админист-е"]: // Администрирование
+                                break;
+                        }
+                        break;
+                    case MyLeftMenus.MenuType.Tables:
+                        switch (MenuList.SelectedIndex)
+                        {
+                            case 0: //..
+                                animeHide.Completed += (s, eIn) =>
+                                {
+                                    MenuList.ItemsSource = null;
+                                    MenuList.ItemsSource = MyLeftMenus.myMenus[(int)MyLeftMenus.MenuType.Root];
+                                    MyLeftMenus.currentMenuType = MyLeftMenus.MenuType.Root;
+
+                                    MenuList.BeginAnimation(WidthProperty, animeShow);
+                                };
+                                MenuList.BeginAnimation(WidthProperty, animeHide);
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["Users"]:
+                                LoadUsers();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["TypeDocs"]:
+                                //MainDataGrid.ItemsSource = GetTypeDosc();
+                                //MainDataGridShow();
+                                break;
+                        }
+                        break;
+                }
+            });
+
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

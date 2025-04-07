@@ -11,75 +11,154 @@
         Background="Transparent"
         ResizeMode="NoResize">
     <Grid>
-        <Border x:Name="WindowBorder" Background="#272727" CornerRadius="10" Padding="10" Margin="20,20,20,20">
+        <Border x:Name="WindowBorder" Background="#151515" CornerRadius="10" Padding="10" Margin="20,20,20,20">
             <Border.Effect>
                 <DropShadowEffect Color="#00BFFF" BlurRadius="20" ShadowDepth="0"/>
             </Border.Effect>
-
-            <Grid x:Name="InternalGrid" Margin="0,0,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Border
-                    x:Name="TitleBorder"
-                    Margin="-10,-10,-10, 0"
-                    Grid.Row="0"
-                    Background="#202020"
-                    CornerRadius="10,10,0,0"
-                    MouseLeftButtonDown="Border_MouseLeftButtonDown">
-                    <Grid>
-                        <TextBlock Text="Отдел кадров" 
+            
+            <Border SizeChanged="Border_SizeChanged" CornerRadius="10" Margin="-10,-10,-10,-10">
+                <Border.Clip>
+                    <RectangleGeometry x:Name="RectangleBoarder" RadiusX="10" RadiusY="10">
+                        <RectangleGeometry.Rect>
+                            <Rect Width="1160" Height="660" X="0" Y="0"/>
+                        </RectangleGeometry.Rect>
+                    </RectangleGeometry>
+                </Border.Clip>
+                
+                <Grid x:Name="InternalGrid" Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*">
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border
+                        x:Name="TitleBorder"
+                        Margin="0"
+                        Grid.Row="0"
+                        Background="#151515"
+                        CornerRadius="10,10,0,0"
+                        MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                        <Grid>
+                            <TextBlock Text="Отдел кадров" 
                                    Foreground="#00BFFF"
                                    FontSize="20"
                                    Margin="18, 10, 0, 0"/>
-                        <StackPanel Margin="0,0,5,0"
+                            <StackPanel Margin="0,0,5,0"
                                     Orientation="Horizontal"
                                     HorizontalAlignment="Right">
-                            <Button x:Name="btnMinimized"
+                                <Button x:Name="btnMinimized"
                                     BorderThickness="0"
                                     Width="40" Height="40" 
                                     Background="Transparent" Click="btnMinimized_Click">
-                                <Ellipse Fill="#2ef100"   
+                                    <Ellipse Fill="#2ef100"   
                                          Stroke="DarkBlue"
                                          StrokeThickness="0"
                                          Width="20"
                                          Height="20"/>
-                            </Button>
-                            <Button x:Name="btnExpand"
+                                </Button>
+                                <Button x:Name="btnExpand"
                                     BorderThickness="0"
                                     Width="40" Height="40" 
                                     Background="Transparent" Click="btnExpand_Click">
-                                <Ellipse Fill="Yellow"
+                                    <Ellipse Fill="Yellow"
                                      Stroke="DarkBlue"
                                      StrokeThickness="0"
                                      Width="20"
                                      Height="20"/>
-                            </Button>
-                            <Button x:Name="btnClose"
+                                </Button>
+                                <Button x:Name="btnClose"
                                     BorderThickness="0"
                                     Width="40" Height="40" 
                                     Background="Transparent"
                                     Click="btnClose_Click">
-                                <Ellipse Fill="Red"
+                                    <Ellipse Fill="Red"
                                          Stroke="DarkBlue"
                                          StrokeThickness="0"
                                          Width="20"
                                          Height="20"/>
-                            </Button>
-                        </StackPanel>                        
-                    </Grid>
-                </Border>
-                <Viewbox 
-                    Grid.Row="1">
-                    <Grid
-                        Background="#272727"
-                        Width="1160"
-                        Height="630"
-                        Margin="-10,0,-10,-10">
-                    </Grid>
-                </Viewbox>
-            </Grid>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Viewbox Grid.Row="1" Margin="0">
+                        <Grid Background="#272727"
+                              Width="1179"
+                              Height="630"
+                              >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <!-- Для ListBox -->
+                                <ColumnDefinition Width="*"/>
+                                <!-- Для DataGrid -->
+                            </Grid.ColumnDefinitions>
+
+                            
+                            <ListBox 
+                                    x:Name="MenuList"
+                                    Grid.Column="0"
+                                    Background="#202020"
+                                    Foreground="White"
+                                    Margin="0,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    Focusable="False"
+                                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                    SelectionChanged="MenuList_SelectionChanged_1"
+                                    >
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="FontSize" Value="23"/>
+                                            <Setter Property="Height" Value="50"/>
+                                            <Setter Property="Width" Value="200"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                                            <Setter Property="HorizontalAlignment" Value="Right" />
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                        <Border x:Name="Bd" Background="{TemplateBinding Background}">
+                                                            <ContentPresenter Margin="5"/>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsSelected" Value="True">
+                                                                <Setter TargetName="Bd" Property="Background" Value="#171717"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="Bd" Property="Background" Value="#171717"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                    <ListBoxItem Content="📁 Справочники" TabIndex="0"/>
+                                    <ListBoxItem Content="⚙️ Админист-е" TabIndex="1"/>
+                                    <ListBoxItem Content="📊 Отчет" TabIndex="2"/>
+                                </ListBox>
+
+                            <!-- DataGrid с анимацией -->
+                            <DataGrid x:Name="MainDataGrid"
+                                      Grid.Column="1"
+                                      AutoGenerateColumns="True"
+                                      CanUserAddRows="True"
+                                      CanUserDeleteRows="True"
+                                      Margin="0"
+                                      HeadersVisibility="Column"
+                                      GridLinesVisibility="All"
+                                      BorderThickness="1"
+                                      Visibility="Collapsed"
+                                      MouseRightButtonUp="MainDataGrid_MouseRightButtonUp">
+                                <!-- Сначала скрыт -->
+                            </DataGrid>
+
+
+                        </Grid>
+                    </Viewbox>
+                </Grid>
+            </Border>
         </Border>
     </Grid>
 </Window>
