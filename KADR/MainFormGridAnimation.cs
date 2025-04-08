@@ -14,6 +14,8 @@ namespace KADR
 {
     public partial class MainForm : Window
     {
+        private bool isAnimating = false;
+
         private void MainDataGridHide(Action onCompleted = null)
         {
             isAnimating = true;

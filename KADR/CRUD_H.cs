@@ -9,6 +9,29 @@ using Dapper;
 
 namespace KADR
 {
+    interface ICrud<T>
+    {
+        void Save(IEnumerable<T> entities);
+    }
+    class CRUDHelper
+    {
+        private const string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Кадр;Integrated Security=True;TrustServerCertificate=True;";
+        static public List<T> ReadAll<T>(string tableName, List<T> field)
+        {
+            var list = new List<T>();
+            var dbConnection = new SqlConnection(connectionString);
+            dbConnection.Open();
+            SqlCommand dbCommand = new SqlCommand($"SELECT * FROM {tableName}", dbConnection);
+            SqlDataReader reader = dbCommand.ExecuteReader();
+
+            List<T> result;
+            while (reader.Read())
+            {
+                result.Add(reader.Get);
+            }
+            return result;
+        }
+    }
     //WTF
     public class CrudHelper<T> : ICrud<T> where T : IDbEntity, new()
     {
