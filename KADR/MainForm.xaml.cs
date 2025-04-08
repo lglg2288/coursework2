@@ -10,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Documents.Serialization;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -84,6 +85,14 @@ namespace KADR
             if (isAnimating)
                 return;
 
+            if (MainDataGrid.ItemsSource != null)
+            {
+                var itemType = MainDataGrid.ItemsSource.GetType().GetGenericArguments()[0];
+                var method = typeof(CRUDHelper).GetMethod("Save");
+                var genericMethod = method.MakeGenericMethod(itemType);
+                genericMethod.Invoke(null, new object[] { MainDataGrid.ItemsSource, currentTable });
+            }
+
             DoubleAnimation animeHide = new DoubleAnimation()
             {
                 From = 200,
@@ -143,8 +152,8 @@ namespace KADR
                                 MainDataGridShow();
                                 break;
                             case int menuElem when menuElem == MyLeftMenus.Element["TypeDocs"]:
-                                //MainDataGrid.ItemsSource = GetTypeDosc();
-                                //MainDataGridShow();
+                                LoadTypeDosc();
+                                MainDataGridShow();
                                 break;
                         }
                         break;

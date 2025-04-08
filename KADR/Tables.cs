@@ -36,7 +36,7 @@ namespace KADR
             get => _pass;
             set => _pass = value ?? "NULL";
         }
-        public bool? Adm { get; set; }
+        public bool Adm { get; set; }
     }
     
     public class TypeDosc : IDbEntity

@@ -153,8 +153,6 @@
                                       MouseRightButtonUp="MainDataGrid_MouseRightButtonUp">
                                 <!-- Сначала скрыт -->
                             </DataGrid>
-
-
                         </Grid>
                     </Viewbox>
                 </Grid>
