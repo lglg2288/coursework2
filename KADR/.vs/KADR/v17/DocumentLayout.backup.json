@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Public\\coursework2\\KADR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|c:\\users\\public\\coursework2\\kadr\\mainform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|c:\\users\\public\\coursework2\\kadr\\mainformddlsorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:mainformddlsorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|c:\\users\\public\\coursework2\\kadr\\tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\mainform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:mainform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\mainform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:mainform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\mainformddls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:mainformddls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\myleftmenus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:myleftmenus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\crud_h.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,23 +23,20 @@
       "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:mainformgridanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\mainformddls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:mainformddls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|c:\\users\\public\\coursework2\\kadr\\tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|KADR||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\formpass.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:formpass.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\mainform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:mainform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\formpass.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:formpass.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F025BF4D-F372-4B16-B5BE-40908D2358F4}|KADR.csproj|C:\\Users\\Public\\coursework2\\KADR\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -60,8 +53,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "DockedWidth": 287,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,58 +63,76 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 287,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainFormDDLSOrders.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainFormDDLSOrders.cs",
+              "RelativeDocumentMoniker": "MainFormDDLSOrders.cs",
+              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainFormDDLSOrders.cs",
+              "RelativeToolTip": "MainFormDDLSOrders.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAkwJQAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T01:32:07.419Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MyLeftMenus.cs",
-              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MyLeftMenus.cs",
-              "RelativeDocumentMoniker": "MyLeftMenus.cs",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MyLeftMenus.cs",
-              "RelativeToolTip": "MyLeftMenus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAADXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T22:00:43.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CRUD_H.cs",
-              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\CRUD_H.cs",
-              "RelativeDocumentMoniker": "CRUD_H.cs",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\CRUD_H.cs",
-              "RelativeToolTip": "CRUD_H.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAiwGMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T12:05:49.75Z"
+              "DocumentIndex": 6,
+              "Title": "MainForm.xaml",
+              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml",
+              "RelativeDocumentMoniker": "MainForm.xaml",
+              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml",
+              "RelativeToolTip": "MainForm.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-03T17:01:54.604Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MainForm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs",
+              "RelativeDocumentMoniker": "MainForm.xaml.cs",
+              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs",
+              "RelativeToolTip": "MainForm.xaml.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAArwIkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T00:05:37.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MainFormDDLS.cs",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainFormDDLS.cs",
               "RelativeDocumentMoniker": "MainFormDDLS.cs",
               "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainFormDDLS.cs",
               "RelativeToolTip": "MainFormDDLS.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA7wB4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAADwvxgAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-06T20:32:44.962Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "MainFormGridAnimation.cs",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainFormGridAnimation.cs",
               "RelativeDocumentMoniker": "MainFormGridAnimation.cs",
               "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainFormGridAnimation.cs",
               "RelativeToolTip": "MainFormGridAnimation.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwBEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T13:04:35.971Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\App.config",
               "RelativeDocumentMoniker": "App.config",
@@ -133,53 +144,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "KADR",
-              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\KADR.csproj",
-              "RelativeDocumentMoniker": "KADR.csproj",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\KADR.csproj",
-              "RelativeToolTip": "KADR.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-07T03:31:17.901Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainForm.xaml",
-              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml",
-              "RelativeDocumentMoniker": "MainForm.xaml",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml",
-              "RelativeToolTip": "MainForm.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-03T17:01:54.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainForm.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs",
-              "RelativeDocumentMoniker": "MainForm.xaml.cs",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\MainForm.xaml.cs",
-              "RelativeToolTip": "MainForm.xaml.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAwwJoAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "CRUD_H.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\CRUD_H.cs",
+              "RelativeDocumentMoniker": "CRUD_H.cs",
+              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\CRUD_H.cs",
+              "RelativeToolTip": "CRUD_H.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAkwHYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T17:01:54.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T12:05:49.75Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "FormPass.xaml",
-              "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\FormPass.xaml",
-              "RelativeDocumentMoniker": "FormPass.xaml",
-              "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\FormPass.xaml",
-              "RelativeToolTip": "FormPass.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-03T17:05:49.909Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -191,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "FormPass.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\FormPass.xaml.cs",
               "RelativeDocumentMoniker": "FormPass.xaml.cs",
@@ -203,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -220,12 +197,12 @@
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
-        "Id": "2cdfa203-043b-4e11-80da-54a1be1884bd",
+        "Id": "7b3454be-7b07-4fe1-b440-fce5f9b82e97",
         "Display": 1,
-        "X": -248,
-        "Y": 218,
-        "Width": 541,
-        "Height": 404,
+        "X": 181,
+        "Y": 631,
+        "Width": 941,
+        "Height": 729,
         "WindowState": 2
       },
       "DocumentGroups": [
@@ -235,15 +212,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Tables.cs",
               "DocumentMoniker": "C:\\Users\\Public\\coursework2\\KADR\\Tables.cs",
               "RelativeDocumentMoniker": "Tables.cs",
               "ToolTip": "C:\\Users\\Public\\coursework2\\KADR\\Tables.cs",
               "RelativeToolTip": "Tables.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAiwCcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAADwv10AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T19:45:11.121Z",
+              "WhenOpened": "2025-04-08T22:57:29.594Z",
               "EditorCaption": ""
             }
           ]

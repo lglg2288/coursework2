@@ -15,7 +15,7 @@
             <Border.Effect>
                 <DropShadowEffect Color="#00BFFF" BlurRadius="20" ShadowDepth="0"/>
             </Border.Effect>
-            
+
             <Border SizeChanged="Border_SizeChanged" CornerRadius="10" Margin="-10,-10,-10,-10">
                 <Border.Clip>
                     <RectangleGeometry x:Name="RectangleBoarder" RadiusX="10" RadiusY="10">
@@ -24,7 +24,7 @@
                         </RectangleGeometry.Rect>
                     </RectangleGeometry>
                 </Border.Clip>
-                
+
                 <Grid x:Name="InternalGrid" Margin="0,0,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
@@ -92,7 +92,7 @@
                                 <!-- Для DataGrid -->
                             </Grid.ColumnDefinitions>
 
-                            
+
                             <ListBox 
                                     x:Name="MenuList"
                                     Grid.Column="0"
@@ -102,42 +102,43 @@
                                     HorizontalAlignment="Left"
                                     Focusable="False"
                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
                                     SelectionChanged="MenuList_SelectionChanged_1"
                                     >
-                                    <ListBox.ItemContainerStyle>
-                                        <Style TargetType="ListBoxItem">
-                                            <Setter Property="FontSize" Value="23"/>
-                                            <Setter Property="Height" Value="50"/>
-                                            <Setter Property="Width" Value="200"/>
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="Cursor" Value="Hand"/>
-                                            <Setter Property="VerticalContentAlignment" Value="Center"/>
-                                            <Setter Property="HorizontalContentAlignment" Value="Right"/>
-                                            <Setter Property="HorizontalAlignment" Value="Right" />
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="ListBoxItem">
-                                                        <Border x:Name="Bd" Background="{TemplateBinding Background}">
-                                                            <ContentPresenter Margin="5"/>
-                                                        </Border>
-                                                        <ControlTemplate.Triggers>
-                                                            <Trigger Property="IsSelected" Value="True">
-                                                                <Setter TargetName="Bd" Property="Background" Value="#171717"/>
-                                                            </Trigger>
-                                                            <Trigger Property="IsMouseOver" Value="True">
-                                                                <Setter TargetName="Bd" Property="Background" Value="#171717"/>
-                                                            </Trigger>
-                                                        </ControlTemplate.Triggers>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </ListBox.ItemContainerStyle>
-                                    <ListBoxItem Content="📁 Справочники" TabIndex="0"/>
-                                    <ListBoxItem Content="⚙️ Админист-е" TabIndex="1"/>
-                                    <ListBoxItem Content="📊 Отчет" TabIndex="2"/>
-                                </ListBox>
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="FontSize" Value="23"/>
+                                        <Setter Property="Height" Value="50"/>
+                                        <Setter Property="Width" Value="200"/>
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                                        <Setter Property="HorizontalAlignment" Value="Right" />
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <Border x:Name="Bd" Background="{TemplateBinding Background}">
+                                                        <ContentPresenter Margin="5"/>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsSelected" Value="True">
+                                                            <Setter TargetName="Bd" Property="Background" Value="#171717"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="Bd" Property="Background" Value="#171717"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                                <ListBoxItem Content="📁 Справочники" TabIndex="0"/>
+                                <ListBoxItem Content="⚙️ Админист-е" TabIndex="1"/>
+                                <ListBoxItem Content="📝 Приказы" TabIndex="1"/>
+                                <ListBoxItem Content="📊 Отчет" TabIndex="2"/>
+                            </ListBox>
 
                             <!-- DataGrid с анимацией -->
                             <DataGrid x:Name="MainDataGrid"
@@ -153,6 +154,104 @@
                                       MouseRightButtonUp="MainDataGrid_MouseRightButtonUp">
                                 <!-- Сначала скрыт -->
                             </DataGrid>
+                            <Grid x:Name="AdminPanel" Grid.Column="1" Visibility="Hidden">
+                                <StackPanel Orientation="Horizontal" Margin="10,10,10,590" Height="30">
+                                    <TextBlock Margin="20, 0, 0, 0" FontSize="18" Grid.Row="1" Text="Логин" HorizontalAlignment="Center" Foreground="White"/>
+                                    <TextBox FontSize="15" Background="#202020" Margin="17.7, 0, 0, 0" Width="200" HorizontalAlignment="Center">
+                                        <TextBox.Effect>
+                                            <DropShadowEffect></DropShadowEffect>
+                                        </TextBox.Effect>
+                                    </TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10,55,10,545" Height="30">
+                                    <TextBlock Margin="18,0,0,0" FontSize="18" Grid.Row="1" Text="Пароль" HorizontalAlignment="Center" Foreground="White"/>
+                                    <PasswordBox FontSize="15" Background="#202020" Margin="8,0,0,0" Width="200" HorizontalAlignment="Center">
+                                        <PasswordBox.Effect>
+                                            <DropShadowEffect></DropShadowEffect>
+                                        </PasswordBox.Effect>
+                                    </PasswordBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10,103,10,497" Height="30">
+                                    <TextBlock Margin="18,0,0,0" FontSize="18" Grid.Row="1" Text="Права администратора" HorizontalAlignment="Center" Foreground="White"/>
+                                    <CheckBox x:Name="CheckboxIsAdmin" Margin="10,0,0,0"></CheckBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10,138,10,462" Height="30">
+                                    <RadioButton GroupName="IdOrLogin" Content="по ID" x:Name="AdminPanelRadioId" Margin="10,0,0,0"/>
+                                    <RadioButton GroupName="IdOrLogin" Content="по логину" x:Name="AdminPanelRadioLogin" Margin="10,0,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10,173,10,417">
+                                    <Button x:Name="AdminPanelAddUser" Margin="18,0,0,0" FontSize="18" Grid.Row="1" Content="Обновить данные пользователя" HorizontalAlignment="Center" Foreground="White"/>
+                                    <Button x:Name="AdminPanelDeleteUser" Margin="18,0,0,0" FontSize="18" Grid.Row="1" Content="Удалить ползователя" HorizontalAlignment="Center" Foreground="White"/>
+                                </StackPanel>
+                            </Grid>
+
+                            
+                            
+
+                            <DataGrid x:Name="JornalKardDataGrid" Grid.Column="1" AutoGenerateColumns="False"
+                                      IsReadOnly="False" CanUserAddRows="True" CanUserDeleteRows="True"
+                                      Visibility="Hidden">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="NumDoc" Binding="{Binding NumDoc}" />
+                                    <DataGridTextColumn Header="DateDoc" Binding="{Binding DateDoc}" />
+                                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                                    <DataGridTextColumn Header="FullName" Binding="{Binding FullName}" />
+
+                                    <!-- ComboBox для PostId -->
+                                    <DataGridTemplateColumn Header="Post">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding PostList}" 
+                              DisplayMemberPath="FullName" 
+                              SelectedValuePath="ID" 
+                              SelectedValue="{Binding PostId}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- ComboBox для PeoplesId -->
+                                    <DataGridTemplateColumn Header="People">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding PeoplesList}" 
+                              DisplayMemberPath="FullName" 
+                              SelectedValuePath="ID" 
+                              SelectedValue="{Binding PeoplesId}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- ComboBox для ClassId -->
+                                    <DataGridTemplateColumn Header="Class">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding ClassList}" 
+                                                          DisplayMemberPath="ClassName" 
+                                                          SelectedValuePath="ID" 
+                                                          SelectedValue="{Binding ClassId}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!-- ComboBox для TypeDoscId -->
+                                    <DataGridTemplateColumn Header="TypeDoc">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding TypeDoscList}" 
+                                                          DisplayMemberPath="TypeDocName" 
+                                                          SelectedValuePath="ID" 
+                                                          SelectedValue="{Binding TypeDoscId}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Button x:Name="btnSaveJornalKardDataGrid" Click="btnSaveJornalKardDataGrid_Click" Grid.Column="0" Width="70" FontSize="15" Content="SAVE" Margin="65,300,65,295" Visibility="Hidden"/>
+
+
+
                         </Grid>
                     </Viewbox>
                 </Grid>

@@ -4,13 +4,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Documents.Serialization;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -108,6 +106,10 @@ namespace KADR
                 FillBehavior = FillBehavior.Stop
             };
 
+            AdminPanel.Visibility = Visibility.Hidden;
+            JornalKardDataGrid.Visibility = Visibility.Hidden;
+            btnSaveJornalKardDataGrid.Visibility = Visibility.Hidden;
+
             MainDataGridHide(() =>
             {
 
@@ -116,7 +118,7 @@ namespace KADR
                     case MyLeftMenus.MenuType.Root:
                         switch (MenuList.SelectedIndex)
                         {
-                            case int menuElem when menuElem == MyLeftMenus.Element["📁 Справочники"]:// Справочники
+                            case int menuElem when menuElem == MyLeftMenus.Element["📁 Справочники"]:
                                 animeHide.Completed += (s, eIn) =>
                                 {
                                     MenuList.ItemsSource = null;
@@ -127,9 +129,15 @@ namespace KADR
                                 };
                                 MenuList.BeginAnimation(WidthProperty, animeHide);
                                 break;
-                            case int menuElem when menuElem == MyLeftMenus.Element["📊 Отчеты"]: // Отчеты
+                            case int menuElem when menuElem == MyLeftMenus.Element["⚙️ Админист-е"]:
+                                AdminPanel.Visibility = Visibility.Visible;
                                 break;
-                            case int menuElem when menuElem == MyLeftMenus.Element["⚙️ Админист-е"]: // Администрирование
+                            case int menuElem when menuElem == MyLeftMenus.Element["📝 Приказы"]: 
+                                JornalKardDataGrid.Visibility = Visibility.Visible;
+                                btnSaveJornalKardDataGrid.Visibility = Visibility.Visible;
+                                LoadJornalKardData();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["📊 Отчеты"]:
                                 break;
                         }
                         break;
@@ -153,6 +161,58 @@ namespace KADR
                                 break;
                             case int menuElem when menuElem == MyLeftMenus.Element["TypeDocs"]:
                                 LoadTypeDosc();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["Tree"]:
+                                LoadTree();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["SaveDocs"]:
+                                LoadSaveDocs();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["PropValue"]:
+                                LoadPropValue();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["Prop"]:
+                                LoadProp();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["Post"]:
+                                LoadPost();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["Peoples"]:
+                                LoadPeoples();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["JornalTabel"]:
+                                LoadJornalTabel();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["JornalKard"]:
+                                LoadJornalKard();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["FieldsJornal"]:
+                                LoadFieldsJornal();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["Department"]:
+                                LoadDepartment();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["ClassName"]:
+                                LoadClassName();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["ClassArr"]:
+                                LoadClassArr();
+                                MainDataGridShow();
+                                break;
+                            case int menuElem when menuElem == MyLeftMenus.Element["Class"]:
+                                LoadClass();
                                 MainDataGridShow();
                                 break;
                         }

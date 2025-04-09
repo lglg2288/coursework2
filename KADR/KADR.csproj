@@ -222,6 +222,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CRUD_H.cs" />
+    <Compile Include="MainFormDDLSOrders.cs" />
     <Compile Include="MainFormGridAnimation.cs" />
     <Compile Include="MyLeftMenus.cs" />
     <Compile Include="Tables.cs" />
