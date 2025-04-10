@@ -10,7 +10,7 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent">
-    
+
     <Grid>
         <Border Background="#272727" CornerRadius="10" Padding="10" Margin="20,20,20,20">
             <Border.Effect>
@@ -48,6 +48,7 @@
                             HorizontalAlignment="Center"
                             Foreground="White"/>
                         <TextBox
+                            x:Name="TextBoxLogin"
                             FontSize="15"
                             Background="#202020"
                             Margin="17.7, 0, 0, 0"
@@ -67,6 +68,7 @@
                             HorizontalAlignment="Center"
                             Foreground="White"/>
                         <PasswordBox
+                            x:Name="PasswordBoxPass"
                             FontSize="15"
                             Background="#202020"
                             Margin="8,0,0,0"
@@ -96,8 +98,60 @@
                             HorizontalAlignment="Center" Click="Button_Click"/>
                     </StackPanel>
                 </StackPanel>
-            </Grid>
 
+                <Canvas Width="360" Height="210"
+                        Grid.Row="0" Grid.RowSpan="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                    <Path x:Name="CrossPath"
+                          Visibility="Hidden"
+                          Stroke="Red"
+                          StrokeThickness="8"
+                          StrokeEndLineCap="Round"
+                          Canvas.Left="0" Canvas.Top="0">
+                          <!--Data="M 10 10 L 30 30 M 30 10 L 10 30
+                          M 30 30 L 20 40
+                          M 10 30 L 0 20
+                          M 10 10 L 20 0
+                          M 30 10 L 40 20"-->
+                        <Path.Data>
+                            <PathGeometry>
+                                <PathFigure x:Name="lineFigure1" StartPoint="180,105">
+                                    <LineSegment x:Name="xt1" Point="180,105"/>
+                                </PathFigure>
+                                <PathFigure x:Name="lineFigure2" StartPoint="180,105">
+                                    <LineSegment x:Name="xt2" Point="180,105"/>
+                                </PathFigure>
+                                <PathFigure x:Name="lineFigure3" StartPoint="180,105">
+                                    <LineSegment x:Name="xt3" Point="180,105"/>
+                                </PathFigure>
+                                <PathFigure x:Name="lineFigure4" StartPoint="180,105">
+                                    <LineSegment x:Name="xt4" Point="180,105"/>
+                                </PathFigure>
+
+                                <PathFigure x:Name="lineFigure5" StartPoint="180,105">
+                                    <LineSegment x:Name="lop1" Point="180,105"/>
+                                </PathFigure>
+                                <PathFigure x:Name="lineFigure6" StartPoint="180,105">
+                                    <LineSegment x:Name="lop2" Point="180,105"/>
+                                </PathFigure>
+                                <PathFigure x:Name="lineFigure7" StartPoint="180,105">
+                                    <LineSegment x:Name="lop3" Point="180,105"/>
+                                </PathFigure>
+                                <PathFigure x:Name="lineFigure8" StartPoint="180,105">
+                                    <LineSegment x:Name="lop4" Point="180,105"/>
+                                </PathFigure>
+                            </PathGeometry>
+                        </Path.Data>
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform x:Name="CrossRotate" CenterX="180" CenterY="20"/>
+                                <ScaleTransform x:Name="CrossScale" CenterX="105" CenterY="20"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Canvas>
+            </Grid>
         </Border>
     </Grid>
 </Window>

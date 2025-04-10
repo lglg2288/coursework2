@@ -9,13 +9,16 @@ using System.Windows.Input;
 using System.Windows.Documents;
 using System.Windows.Forms.VisualStyles;
 using System.Windows.Navigation;
+using System.Data.Common;
+using System.ComponentModel;
+using ControlzEx.Standard;
 
 namespace KADR
 {
     public partial class MainForm : Window
     {
         List<JornalKard> JornalKardObj;
-        public class JornalKardViewModel
+        public class JornalKardViewModel : INotifyPropertyChanged
         {
             public int ID { get; set; }
             public int PostId { get; set; }
@@ -32,6 +35,10 @@ namespace KADR
             public List<Peoples> PeoplesList { get; set; }
             public List<Class> ClassList { get; set; }
             public List<TypeDosc> TypeDoscList { get; set; }
+
+            public event PropertyChangedEventHandler PropertyChanged;
+            protected void OnPropertyChanged(string name) =>
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         // Пример метода загрузки данных в DataGrid
@@ -148,9 +155,84 @@ namespace KADR
 
         private void btnSaveJornalKardDataGrid_Click(object sender, RoutedEventArgs e)
         {
-            SaveUpdatedJornalKard(GetUpdatedJornalKardData());
+            if (JornalKardDataGrid.ItemsSource is List<JornalKardViewModel> jkvmList)
+            {
+                List<JornalKard> jkList = jkvmList.Select((p) => new JornalKard() {
+                    PostId = p.PostId,
+                    PeoplesId = p.PeoplesId,
+                    ClassId = p.ClassId,
+                    TypeDoscId = p.TypeDoscId,
+                    NumDoc = p.NumDoc?.Trim(),
+                    DateDoc = p.DateDoc,
+                    Status = p.Status,
+                    Name = p.Name,
+                    FullName = p.FullName,
+                }).ToList();
+                CRUDHelper.Save(jkList, "JornalKard");
+
+            }
         }
 
+        private void source()
+        {
+            if (JornalKardDataGrid.ItemsSource is List<JornalKardViewModel> jkvmList)
+            {
+                using (var sqlConnection = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=Кадр;Integrated Security=True;TrustServerCertificate=True;"))
+                {
+                    sqlConnection.Open();
+
+
+                    using (var deleteCommand = new SqlCommand($"DELETE FROM JornalKard", sqlConnection))
+                    {
+                        deleteCommand.ExecuteNonQuery();
+                    }
+                    using (var reseedCommand = new SqlCommand($"DBCC CHECKIDENT ('JornalKard', RESEED, 0)", sqlConnection))
+                    {
+                        reseedCommand.ExecuteNonQuery();
+                    }
+
+                    var commandStr = new StringBuilder();
+                    var parameters = new List<SqlParameter>();
+
+                    commandStr.Append("INSERT INTO JornalKard (PostId, PeoplesId, ClassId, TypeDoscId, NumDoc, DateDoc, Status, Name, FullName) VALUES ");
+
+                    for (int i = 0; i < jkvmList.Count; i++)
+                    {
+                        var postfix = i.ToString();
+
+                        commandStr.Append($"(@PostId{postfix}, @PeoplesId{postfix}, @ClassId{postfix}, @TypeDoscId{postfix}, " +
+                                          $"@NumDoc{postfix}, @DateDoc{postfix}, @Status{postfix}, @Name{postfix}, @FullName{postfix}),");
+
+                        var safeDate = (jkvmList[i].DateDoc < new DateTime(1753, 1, 1) || jkvmList[i].DateDoc > DateTime.Now.AddYears(10))
+                                           ? DateTime.Now
+                                           : jkvmList[i].DateDoc;
+
+                        parameters.AddRange(new[]
+                        {
+                            new SqlParameter($"@PostId{postfix}", jkvmList[i].PostId),
+                            new SqlParameter($"@PeoplesId{postfix}", jkvmList[i].PeoplesId),
+                            new SqlParameter($"@ClassId{postfix}", jkvmList[i].ClassId),
+                            new SqlParameter($"@TypeDoscId{postfix}", jkvmList[i].TypeDoscId),
+                            new SqlParameter($"@NumDoc{postfix}", jkvmList[i].NumDoc ?? (object)DBNull.Value),
+                            new SqlParameter($"@DateDoc{postfix}", safeDate),
+                            new SqlParameter($"@Status{postfix}", jkvmList[i].Status ?? (object)DBNull.Value),
+                            new SqlParameter($"@Name{postfix}", jkvmList[i].Name ?? (object)DBNull.Value),
+                            new SqlParameter($"@FullName{postfix}", jkvmList[i].FullName ?? (object)DBNull.Value)
+                        });
+                    }
+
+                    // Удаляем последнюю запятую
+                    commandStr.Length--;
+
+                    using (var sqlCommand = new SqlCommand(commandStr.ToString(), sqlConnection))
+                    {
+                        sqlCommand.Parameters.AddRange(parameters.ToArray());
+                        sqlCommand.ExecuteNonQuery();
+                    }
+
+                }
+            }
+        }
 
     }
 }

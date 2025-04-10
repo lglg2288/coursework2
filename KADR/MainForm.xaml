@@ -87,9 +87,7 @@
                               >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="200"/>
-                                <!-- Для ListBox -->
                                 <ColumnDefinition Width="*"/>
-                                <!-- Для DataGrid -->
                             </Grid.ColumnDefinitions>
 
 
@@ -140,7 +138,7 @@
                                 <ListBoxItem Content="📊 Отчет" TabIndex="2"/>
                             </ListBox>
 
-                            <!-- DataGrid с анимацией -->
+                            
                             <DataGrid x:Name="MainDataGrid"
                                       Grid.Column="1"
                                       AutoGenerateColumns="True"
@@ -152,8 +150,9 @@
                                       BorderThickness="1"
                                       Visibility="Collapsed"
                                       MouseRightButtonUp="MainDataGrid_MouseRightButtonUp">
-                                <!-- Сначала скрыт -->
                             </DataGrid>
+                            
+                            
                             <Grid x:Name="AdminPanel" Grid.Column="1" Visibility="Hidden">
                                 <StackPanel Orientation="Horizontal" Margin="10,10,10,590" Height="30">
                                     <TextBlock Margin="20, 0, 0, 0" FontSize="18" Grid.Row="1" Text="Логин" HorizontalAlignment="Center" Foreground="White"/>
@@ -206,7 +205,7 @@
                                                 <ComboBox ItemsSource="{Binding PostList}" 
                               DisplayMemberPath="FullName" 
                               SelectedValuePath="ID" 
-                              SelectedValue="{Binding PostId}" />
+                              SelectedValue="{Binding PostId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -216,9 +215,9 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <ComboBox ItemsSource="{Binding PeoplesList}" 
-                              DisplayMemberPath="FullName" 
-                              SelectedValuePath="ID" 
-                              SelectedValue="{Binding PeoplesId}" />
+                                                          DisplayMemberPath="FullName" 
+                                                          SelectedValuePath="ID" 
+                                                          SelectedValue="{Binding PeoplesId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -228,9 +227,9 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <ComboBox ItemsSource="{Binding ClassList}" 
-                                                          DisplayMemberPath="ClassName" 
-                                                          SelectedValuePath="ID" 
-                                                          SelectedValue="{Binding ClassId}" />
+                                                          DisplayMemberPath="FullName"
+                                                          SelectedValuePath="ID"
+                                                          SelectedValue="{Binding ClassId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -240,9 +239,9 @@
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <ComboBox ItemsSource="{Binding TypeDoscList}" 
-                                                          DisplayMemberPath="TypeDocName" 
-                                                          SelectedValuePath="ID" 
-                                                          SelectedValue="{Binding TypeDoscId}" />
+                                                          DisplayMemberPath="FullName"
+                                                          SelectedValuePath="ID"
+                                                          SelectedValue="{Binding TypeDoscId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -250,7 +249,10 @@
                             </DataGrid>
                             <Button x:Name="btnSaveJornalKardDataGrid" Click="btnSaveJornalKardDataGrid_Click" Grid.Column="0" Width="70" FontSize="15" Content="SAVE" Margin="65,300,65,295" Visibility="Hidden"/>
 
-
+                            <Grid x:Name="ReportToExel" Grid.Column="1" Visibility="Hidden">
+                                <Button x:Name="btnExport" Content="Export" Width="70" Height="20" Click="btnExport_Click"/>
+                                <TextBox x:Name="txtBoxNumDoc" Width="70" Height="20" Margin="454,272,455,332"></TextBox>
+                            </Grid>
 
                         </Grid>
                     </Viewbox>

@@ -109,6 +109,7 @@ namespace KADR
             AdminPanel.Visibility = Visibility.Hidden;
             JornalKardDataGrid.Visibility = Visibility.Hidden;
             btnSaveJornalKardDataGrid.Visibility = Visibility.Hidden;
+            ReportToExel.Visibility = Visibility.Hidden;
 
             MainDataGridHide(() =>
             {
@@ -138,6 +139,7 @@ namespace KADR
                                 LoadJornalKardData();
                                 break;
                             case int menuElem when menuElem == MyLeftMenus.Element["📊 Отчеты"]:
+                                ReportToExel.Visibility = Visibility.Visible;
                                 break;
                         }
                         break;
