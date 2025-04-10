@@ -153,34 +153,53 @@
                             </DataGrid>
                             
                             
-                            <Grid x:Name="AdminPanel" Grid.Column="1" Visibility="Hidden">
-                                <StackPanel Orientation="Horizontal" Margin="10,10,10,590" Height="30">
-                                    <TextBlock Margin="20, 0, 0, 0" FontSize="18" Grid.Row="1" Text="Логин" HorizontalAlignment="Center" Foreground="White"/>
-                                    <TextBox FontSize="15" Background="#202020" Margin="17.7, 0, 0, 0" Width="200" HorizontalAlignment="Center">
-                                        <TextBox.Effect>
-                                            <DropShadowEffect></DropShadowEffect>
-                                        </TextBox.Effect>
-                                    </TextBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="10,55,10,545" Height="30">
-                                    <TextBlock Margin="18,0,0,0" FontSize="18" Grid.Row="1" Text="Пароль" HorizontalAlignment="Center" Foreground="White"/>
-                                    <PasswordBox FontSize="15" Background="#202020" Margin="8,0,0,0" Width="200" HorizontalAlignment="Center">
-                                        <PasswordBox.Effect>
-                                            <DropShadowEffect></DropShadowEffect>
-                                        </PasswordBox.Effect>
-                                    </PasswordBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="10,103,10,497" Height="30">
-                                    <TextBlock Margin="18,0,0,0" FontSize="18" Grid.Row="1" Text="Права администратора" HorizontalAlignment="Center" Foreground="White"/>
-                                    <CheckBox x:Name="CheckboxIsAdmin" Margin="10,0,0,0"></CheckBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="10,138,10,462" Height="30">
-                                    <RadioButton GroupName="IdOrLogin" Content="по ID" x:Name="AdminPanelRadioId" Margin="10,0,0,0"/>
-                                    <RadioButton GroupName="IdOrLogin" Content="по логину" x:Name="AdminPanelRadioLogin" Margin="10,0,0,0"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="10,173,10,417">
-                                    <Button x:Name="AdminPanelAddUser" Margin="18,0,0,0" FontSize="18" Grid.Row="1" Content="Обновить данные пользователя" HorizontalAlignment="Center" Foreground="White"/>
-                                    <Button x:Name="AdminPanelDeleteUser" Margin="18,0,0,0" FontSize="18" Grid.Row="1" Content="Удалить ползователя" HorizontalAlignment="Center" Foreground="White"/>
+                            <Grid x:Name="AdminPanel" Grid.Column="1" Visibility="Visible">
+                                <StackPanel Orientation="Vertical">                                    
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,20,0,0">
+                                        <TextBlock Margin="53, 0, 0, 0" FontSize="18" Grid.Row="1" Text="ID" HorizontalAlignment="Center" Foreground="White"/>
+                                        <TextBox x:Name="AdminPaneltxtBoxID" FontSize="15" Background="#202020" Margin="17.7, 0, 0, 0" Width="200" HorizontalAlignment="Center">
+                                            <TextBox.Effect>
+                                                <DropShadowEffect></DropShadowEffect>
+                                            </TextBox.Effect>
+                                        </TextBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="15,20,0,0">
+                                        <TextBlock Margin="20, 0, 0, 0" FontSize="18" Grid.Row="1" Text="Имя" HorizontalAlignment="Center" Foreground="White"/>
+                                        <TextBox x:Name="AdminPaneltxtBoxName" FontSize="15" Background="#202020" Margin="17.7, 0, 0, 0" Width="200" HorizontalAlignment="Center">
+                                            <TextBox.Effect>
+                                                <DropShadowEffect></DropShadowEffect>
+                                            </TextBox.Effect>
+                                        </TextBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,20,0,0">
+                                        <TextBlock Margin="20, 0, 0, 0" FontSize="18" Grid.Row="1" Text="Логин" HorizontalAlignment="Center" Foreground="White"/>
+                                        <TextBox x:Name="AdminPaneltxtBoxLogin" FontSize="15" Background="#202020" Margin="17.7, 0, 0, 0" Width="200" HorizontalAlignment="Center">
+                                            <TextBox.Effect>
+                                                <DropShadowEffect></DropShadowEffect>
+                                            </TextBox.Effect>
+                                        </TextBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,20,0,0">
+                                        <TextBlock Margin="18,0,0,0" FontSize="18" Grid.Row="1" Text="Пароль" HorizontalAlignment="Center" Foreground="White"/>
+                                        <PasswordBox x:Name="AdminPanelPassword" FontSize="15" Background="#202020" Margin="8,0,0,0" Width="200" HorizontalAlignment="Center">
+                                            <PasswordBox.Effect>
+                                                <DropShadowEffect></DropShadowEffect>
+                                            </PasswordBox.Effect>
+                                        </PasswordBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,20,0,0">
+                                        <TextBlock Margin="18,0,0,0" FontSize="18" Grid.Row="1" Text="Права администратора" HorizontalAlignment="Center" Foreground="White"/>
+                                        <CheckBox x:Name="CheckboxIsAdmin" Margin="10,0,0,0"></CheckBox>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,20,0,0">
+                                        <RadioButton GroupName="IdOrLogin" Content="по ID" x:Name="AdminPanelRadioId" Margin="10,0,0,0"/>
+                                        <RadioButton GroupName="IdOrLogin" Content="по логину" x:Name="AdminPanelRadioLogin" Margin="10,0,0,0"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                        <Button x:Name="AdminPanelAddUser" Margin="18,0,0,0" FontSize="18" Grid.Row="1" Content="Добавить пользователя" HorizontalAlignment="Center" Foreground="White" Click="AdminPanelAddUser_Click"/>
+                                        <Button x:Name="AdminPanelUpdateUser" Margin="18,0,0,0" FontSize="18" Grid.Row="1" Content="Обновить данные пользователя" HorizontalAlignment="Center" Foreground="White" Click="AdminPanelUpdateUser_Click"/>
+                                        <Button x:Name="AdminPanelDeleteUser" Margin="18,0,0,0" FontSize="18" Grid.Row="1" Content="Удалить ползователя" HorizontalAlignment="Center" Foreground="White" Click="AdminPanelDeleteUser_Click"/>
+                                    </StackPanel>
                                 </StackPanel>
                             </Grid>
 

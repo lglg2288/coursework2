@@ -244,6 +244,7 @@
     </ApplicationDefinition>
     <Compile Include="CRUD_H.cs" />
     <Compile Include="currentUserStatus.cs" />
+    <Compile Include="MainFormAdminPanel.cs" />
     <Compile Include="MainFormDDLSOrders.cs" />
     <Compile Include="MainFormExportExel.cs" />
     <Compile Include="MainFormGridAnimation.cs" />
