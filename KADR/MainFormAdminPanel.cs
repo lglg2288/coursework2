@@ -33,14 +33,13 @@ namespace KADR
                     command.Parameters.AddWithValue("@PASS", AdminPanelPassword.Password);
                     command.Parameters.AddWithValue("@Adm", CheckboxIsAdmin.IsChecked == true);
 
-                    int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        MessageBox.Show("Пользователь успешно добавлен.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Пользователь не был добавлен.");
+                        MessageBox.Show(reader.HasRows.ToString());
+                        while (reader.Read())
+                        {
+                            MessageBox.Show(reader.HasRows.ToString());
+                        }
                     }
                 }
             }
@@ -60,14 +59,13 @@ namespace KADR
                         command.Parameters.AddWithValue("@Adm", CheckboxIsAdmin.IsChecked == true);
                         command.Parameters.AddWithValue("@ID", AdminPaneltxtBoxID.Text);
 
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            MessageBox.Show("Данные успешно обновлены.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Пользователь не найден или не был обновлен");
+                            MessageBox.Show(reader.HasRows.ToString());
+                            while (reader.Read())
+                            {
+                                MessageBox.Show(reader.HasRows.ToString());
+                            }
                         }
                     }
                 }
@@ -84,14 +82,13 @@ namespace KADR
                         command.Parameters.AddWithValue("@PASS", AdminPanelPassword.Password);
                         command.Parameters.AddWithValue("@Adm", CheckboxIsAdmin.IsChecked == true);
 
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            MessageBox.Show("Данные успешно обновлены.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Пользователь не найден или не был обновлен");
+                            MessageBox.Show(reader.HasRows.ToString());
+                            while (reader.Read())
+                            {
+                                MessageBox.Show(reader.HasRows.ToString());
+                            }
                         }
                     }
                 }
@@ -108,14 +105,13 @@ namespace KADR
                     {
                         command.Parameters.AddWithValue("@ID", Convert.ToInt32(AdminPaneltxtBoxID.Text));
 
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            MessageBox.Show("Пользователь успешно удален.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Пользователь не найден или не был удален.");
+                            MessageBox.Show(reader.HasRows.ToString());
+                            while (reader.Read())
+                            {
+                                MessageBox.Show(reader.HasRows.ToString());
+                            }
                         }
                     }
                 }
@@ -125,24 +121,27 @@ namespace KADR
                 using (var connection = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=Кадр;Integrated Security=True;TrustServerCertificate=True;"))
                 {
                     connection.Open();
-                    using (var command = new SqlCommand("DELETE FROM Users WHERE Login = @Login", connection))
+                    SqlCommand command = null;
+
+                    if (AdminPanelRadioId.IsChecked == true)
                     {
-                        command.Parameters.AddWithValue("@Login", AdminPaneltxtBoxLogin.Text);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            { }
-                        }
-                        //int rowsAffected = command.Execute();
-                        //if (rowsAffected > 0)
-                        //{
-                        //    MessageBox.Show("Пользователь успешно удален.");
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Пользователь не найден или не был удален.");
-                        //}
+                        command = new SqlCommand("DELETE FROM Users WHERE ID = @ID", connection);
+                        command.Parameters.AddWithValue("@ID", Convert.ToInt32(AdminPaneltxtBoxID.Text));
                     }
+                    else if (AdminPanelRadioLogin.IsChecked == true)
+                    {
+                        command = new SqlCommand("DELETE FROM Users WHERE Login = @Login", connection);
+                        command.Parameters.AddWithValue("@Login", AdminPaneltxtBoxLogin.Text);
+                    }
+
+                    if (command != null)
+                    {
+                        int rows = command.ExecuteNonQuery();
+                        MessageBox.Show(rows > 0 ? "Пользователь удалён" : "Ничего не найдено для удаления");
+                    }
+
+                    AdminPaneltxtBoxID.Clear();
+                    AdminPaneltxtBoxLogin.Clear();
                 }
             }
         }

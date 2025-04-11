@@ -11,7 +11,11 @@
         Background="Transparent"
         ResizeMode="NoResize">
     <Grid>
-        <Border x:Name="WindowBorder" Background="#151515" CornerRadius="10" Padding="10" Margin="20,20,20,20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
+        <Border x:Name="WindowBorder" Background="#151515" CornerRadius="10" Padding="10" Margin="20,20,20,20" Grid.ColumnSpan="2">
             <Border.Effect>
                 <DropShadowEffect Color="#00BFFF" BlurRadius="20" ShadowDepth="0"/>
             </Border.Effect>
@@ -138,7 +142,7 @@
                                 <ListBoxItem Content="📊 Отчет" TabIndex="2"/>
                             </ListBox>
 
-                            
+
                             <DataGrid x:Name="MainDataGrid"
                                       Grid.Column="1"
                                       AutoGenerateColumns="True"
@@ -151,10 +155,10 @@
                                       Visibility="Collapsed"
                                       MouseRightButtonUp="MainDataGrid_MouseRightButtonUp">
                             </DataGrid>
-                            
-                            
-                            <Grid x:Name="AdminPanel" Grid.Column="1" Visibility="Visible">
-                                <StackPanel Orientation="Vertical">                                    
+
+
+                            <Grid x:Name="AdminPanel" Grid.Column="1" Visibility="Hidden">
+                                <StackPanel Orientation="Vertical">
                                     <StackPanel Orientation="Horizontal" Height="30" Margin="0,20,0,0">
                                         <TextBlock Margin="53, 0, 0, 0" FontSize="18" Grid.Row="1" Text="ID" HorizontalAlignment="Center" Foreground="White"/>
                                         <TextBox x:Name="AdminPaneltxtBoxID" FontSize="15" Background="#202020" Margin="17.7, 0, 0, 0" Width="200" HorizontalAlignment="Center">
@@ -203,8 +207,8 @@
                                 </StackPanel>
                             </Grid>
 
-                            
-                            
+
+
 
                             <DataGrid x:Name="JornalKardDataGrid" Grid.Column="1" AutoGenerateColumns="False"
                                       IsReadOnly="False" CanUserAddRows="True" CanUserDeleteRows="True"

@@ -89,6 +89,8 @@ namespace KADR
                 var method = typeof(CRUDHelper).GetMethod("Save");
                 var genericMethod = method.MakeGenericMethod(itemType);
                 genericMethod.Invoke(null, new object[] { MainDataGrid.ItemsSource, currentTable });
+                currentTable = null;
+                MainDataGrid.ItemsSource = null;
             }
 
             DoubleAnimation animeHide = new DoubleAnimation()
